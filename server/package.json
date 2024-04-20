@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "\"RTRP PROJECT\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VengalaEshwar/Project_RTRP.git"
+  },
+  "author": "eshwar,aravind,sai kumar,vamshi,srikanth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VengalaEshwar/Project_RTRP/issues"
+  },
+  "homepage": "https://github.com/VengalaEshwar/Project_RTRP#readme"
+}
