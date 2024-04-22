@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/VengalaEshwar/Project_RTRP/issues"
   },
-  "homepage": "https://github.com/VengalaEshwar/Project_RTRP#readme"
+  "homepage": "https://github.com/VengalaEshwar/Project_RTRP#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
