@@ -26,14 +26,53 @@
     <section id="home" class="active">
         <div class="hero">
             <h2>Parkinson's Disease Prediction</h2>
-            <form action="predict.py" method="post" class="prediction-form">
-                <label for="mdvp_fo">MDVP:Fo(Hz):</label>
-                <input type="number" id="mdvp_fo" name="mdvp_fo" step="0.01" required>
-
-                <!-- Repeat these input fields for other features -->
-
-                <button type="submit" class="btn">Predict</button>
+            <form  class="prediction-form" action="blank">
+                <!-- <label for="mdvp_fo">MDVP:Fo(Hz):</label>
+                <input type="number" id="mdvp_fo" name="mdvp_fo" step="0.01" required> -->
+                <script>
+                    const data = ["MDVP:Fo(Hz)", "MDVP:Fhi(Hz)", "MDVP:Flo(Hz)", "MDVP:Jitter(%)", "MDVP:Jitter(Abs)", "MDVP:RAP", "MDVP:PPQ", "JitterDP", "MDVP:Shimmer", "MDVP:Shimmer(dB)", "Shimmer:APQ3", "Shimmer:APQ5", "MDVP:APQ", "Shimmer:DDA", "NHR", "HNR",  "RPDE", "DFA", "spread1", "spread2", "D2", "PPE"];  
+                    let count=0;              //    "status",
+                    for(let d of data)
+                    {
+                        document.write(`<label for="d${count}">${d}:</label>
+                        <input type="number" id="d${count}" name="d${count}" step="0.01" required>`);
+                        count++;
+                    }
+                </script>
+                <button type="submit" id = "form_submit" class="btn">Predict</button>
             </form>
+            <script>
+                document.getElementById('prediction-form').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent default form submission
+    
+                    // Disable the button to prevent multiple submissions
+                    document.getElementById('form_submit').disabled = true;
+    
+                    // Get form data
+                    const formData = new FormData(this);
+    
+                    // Convert form data to JSON object
+                    const jsonData = {};
+                    formData.forEach((value, key) => { jsonData[key] = value; });
+    
+                    // Send JSON data to server and handle response
+                    fetch('http://localhost:5000/predictparkinsons', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(jsonData)
+                    })
+                    .then(response => {
+                        if (response.ok) { return response.json(); }
+                        else
+                        {throw new Error('Network response was not ok.');}
+                    })
+                    .then(data => {
+                        console.log(data);
+                        <!-- window.location.href = './evaluation.html'; -->
+                    })
+                    .catch(error => { console.error('Error:', error); })
+                });
+            </script>
         </div>
     </section>
 
