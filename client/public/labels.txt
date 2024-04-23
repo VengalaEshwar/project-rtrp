@@ -1,0 +1,4 @@
+0 VeryMild
+1 No
+2 Moderate
+3 mild
