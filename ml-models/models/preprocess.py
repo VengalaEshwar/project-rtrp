@@ -8,7 +8,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
 from joblib import dump, load  
 
-df = pd.read_csv("parkinsons.csv")
+df = pd.read_csv("D:\coding\Project_RTRP\ml-models\models\parkinsons.csv")
 df.isnull().sum()
 df.dropna(inplace=True)
 numeric_columns = df.select_dtypes(include=[np.number]).columns

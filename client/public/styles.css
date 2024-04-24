@@ -13,7 +13,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: #000; /* Change text color to black */
+    background-blend-mode:color-burn;
+    color: yellow;
 }
 /* Watermark Logo Styles */
 /* .watermark-container {
@@ -46,7 +47,7 @@ input[type="file"] {
 
 /* Header Styles */
 header {
-    background-color: #0d1669;
+    background-color: #0d1669; /*#0d1669;*/
     color: #fff;
     padding: 20px 0;
     display: flex;

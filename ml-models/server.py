@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
 # import model
 # import your_ml_module
-
+from flask_cors import CORS
 app = Flask(__name__)
-
-@app.route('/predictpakinsons', methods=['POST'])
+CORS(app)
+@app.route('/predictparkinsons', methods=['POST'])
 def predict():
     data = request.json
     prediction =data #model.predict(data)
