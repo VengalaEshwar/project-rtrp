@@ -5,6 +5,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.metrics import accuracy_score
 from preprocess import preProcess
 
@@ -45,5 +46,14 @@ knn.fit(X_train, y_train)
 y_pred_knn = knn.predict(X_test)
 accuracy_knn = accuracy_score(y_test, y_pred_knn)
 print(f"Accuracy: {accuracy_knn}")
+
+#______________________________________________________________________________
+
+# accuracy test using xgboost
+xgb = HistGradientBoostingClassifier()
+xgb.fit(X_train, y_train)
+y_pred_xgb = xgb.predict(X_test)
+accuracy_xgb = accuracy_score(y_test, y_pred_xgb)
+print(f"Accuracy: {accuracy_xgb}")
 
 #______________________________________________________________________________
